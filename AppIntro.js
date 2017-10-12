@@ -310,7 +310,7 @@ export default class AppIntro extends Component {
     if (pageArray.length > 0) {
       pages = pageArray.map((page, i) => this.renderBasicSlidePage(i, page));
     } else {
-      pages = childrens.map((children, i) => this.renderChild(children, i, i));
+      pages = childrens.filter(obj => obj !== undefined).map((children, i) => this.renderChild(children, i, i));
     }
 
     if (this.isToTintStatusBar()) {
